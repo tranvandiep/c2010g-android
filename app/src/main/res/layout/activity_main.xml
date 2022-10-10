@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="6dp"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="User Name:" />
+
+    <EditText
+        android:id="@+id/am_username"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter user name"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/textView2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Address:" />
+
+    <EditText
+        android:id="@+id/am_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:hint="Enter address"
+        android:inputType="textPersonName"
+        android:text="" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:orientation="horizontal">
+        <Button
+            android:id="@+id/am_save_data_btn"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="3dp"
+            android:text="Save Data" />
+
+        <Button
+            android:id="@+id/am_reset_form_btn"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:layout_marginLeft="3dp"
+            android:layout_height="wrap_content"
+            android:text="Reset Form" />
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/am_open_btn"
+        android:background="#F44336"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Open New Activity" />
+
+
+</androidx.appcompat.widget.LinearLayoutCompat>
