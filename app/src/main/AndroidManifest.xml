@@ -14,10 +14,10 @@
         android:theme="@style/Theme.C2010G"
         tools:targetApi="31">
         <activity
-            android:name=".NewActivity"
+            android:name=".lesson02.EditActivity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".lesson02.DetailActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -25,6 +25,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity
+            android:name=".NewActivity"
+            android:exported="false" />
+        <activity
+            android:name=".MainActivity"
+            android:exported="true"></activity>
     </application>
 
 </manifest>

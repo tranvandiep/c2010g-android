@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="6dp"
+    tools:context=".lesson02.DetailActivity">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:textSize="26dp"
+        android:textColor="#E91E63"
+        android:text="Thong Tin Sinh Vien" />
+
+    <TextView
+        android:id="@+id/ad_fullname"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Ho - Ten" />
+
+    <TextView
+        android:id="@+id/ad_email"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Email" />
+
+    <TextView
+        android:id="@+id/ad_address"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Dia Chi" />
+
+    <Button
+        android:id="@+id/ad_edit_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Sua Thong Tin" />
+</androidx.appcompat.widget.LinearLayoutCompat>
