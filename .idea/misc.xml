@@ -6,9 +6,11 @@
         <entry key="app/src/main/res/layout/activity_detail.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/activity_edit.xml" value="0.21614583333333334" />
         <entry key="app/src/main/res/layout/activity_edit_song.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/activity_food.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/activity_new.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/activity_song.xml" value="0.23020833333333332" />
+        <entry key="app/src/main/res/layout/item_food.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/layout/item_song.xml" value="0.23020833333333332" />
         <entry key="app/src/main/res/menu/menu_song.xml" value="0.23020833333333332" />
       </map>
