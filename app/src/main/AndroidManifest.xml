@@ -14,10 +14,10 @@
         android:theme="@style/Theme.C2010G"
         tools:targetApi="31">
         <activity
-            android:name=".lesson02.EditActivity"
+            android:name=".lesson03.EditSongActivity"
             android:exported="false" />
         <activity
-            android:name=".lesson02.DetailActivity"
+            android:name=".lesson03.SongActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,11 +26,17 @@
             </intent-filter>
         </activity>
         <activity
+            android:name=".lesson02.EditActivity"
+            android:exported="false" />
+        <activity
+            android:name=".lesson02.DetailActivity"
+            android:exported="true"></activity>
+        <activity
             android:name=".NewActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"
-            android:exported="true"></activity>
+            android:exported="true" />
     </application>
 
 </manifest>
