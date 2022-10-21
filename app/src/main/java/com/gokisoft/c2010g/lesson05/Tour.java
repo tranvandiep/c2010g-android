@@ -1,8 +1,11 @@
 package com.gokisoft.c2010g.lesson05;
 
+import android.database.Cursor;
+
 import java.io.Serializable;
 
 public class Tour implements Serializable {
+    int _id;
     String name;
     String address;
     float price;
@@ -18,6 +21,23 @@ public class Tour implements Serializable {
         this.price = price;
         this.startDate = startDate;
         this.endDate = endDate;
+    }
+
+    public void setData(Cursor cursor) {
+        this._id = cursor.getInt(cursor.getColumnIndexOrThrow("_id"));
+        this.name = cursor.getString(cursor.getColumnIndexOrThrow("name"));
+        this.address = cursor.getString(cursor.getColumnIndexOrThrow("address"));
+        this.price = cursor.getFloat(cursor.getColumnIndexOrThrow("price"));
+        this.startDate = cursor.getString(cursor.getColumnIndexOrThrow("start_date"));
+        this.endDate = cursor.getString(cursor.getColumnIndexOrThrow("end_date"));
+    }
+
+    public int getId() {
+        return _id;
+    }
+
+    public void setId(int _id) {
+        this._id = _id;
     }
 
     public String getName() {
