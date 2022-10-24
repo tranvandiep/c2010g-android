@@ -1,0 +1,6 @@
+- Service
+	- run background
+	- lifecycle trong service
+- Thread & AsyncTask
+- Picasso -> Hien thi hinh anh
+- okhttp (get/post http) -> Goi API tu APP (retrofit -> SOAP/Restfull)
