@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.appcompat.widget.LinearLayoutCompat xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="6dp"
+    tools:context=".lesson07.CounterActivity">
+
+    <Button
+        android:id="@+id/ac_start_btn"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Start Service" />
+
+    <Button
+        android:id="@+id/ac_stop_btn"
+        android:textColor="#FFEB3B"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Stop Service" />
+
+    <TextView
+        android:id="@+id/ac_counter_text"
+        android:gravity="center"
+        android:textSize="30dp"
+        android:textColor="#E91E63"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="0" />
+</androidx.appcompat.widget.LinearLayoutCompat>
