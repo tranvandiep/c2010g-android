@@ -59,8 +59,8 @@ public class FoodActivity extends AppCompatActivity {
         mListView = findViewById(R.id.af_listview);
 
         dataList = new ArrayList<>();
-        dataList.add(new Food("A", 1000));
-        dataList.add(new Food("A", 2000));
+        dataList.add(new Food("A", 1000, "https://abhiandroid.com/programming/wp-content/uploads/2017/10/AsyncTask-Example-Android-Flow.png"));
+        dataList.add(new Food("A", 2000, "https://i.ytimg.com/vi/uKx0FuVriqA/maxresdefault.jpg"));
 
         adapter = new FoodAdapter(this, dataList);
 

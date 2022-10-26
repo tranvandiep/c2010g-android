@@ -4,9 +4,11 @@ import android.app.Activity;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.gokisoft.c2010g.R;
+import com.squareup.picasso.Picasso;
 
 import java.util.List;
 
@@ -40,9 +42,14 @@ public class FoodAdapter extends BaseAdapter {
 
         TextView titleView = view.findViewById(R.id.if_title);
         TextView priceView = view.findViewById(R.id.if_price);
+        ImageView imageView = view.findViewById(R.id.if_photo);
 
         titleView.setText(dataList.get(position).getTitle());
         priceView.setText(dataList.get(position).getPrice() + "");
+
+        Picasso.with(mActivity)
+                .load(dataList.get(position).getThumbnail())
+                .into(imageView);
 
         return view;
     }

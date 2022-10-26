@@ -14,9 +14,12 @@ import android.widget.TextView;
 import com.gokisoft.c2010g.R;
 
 public class CounterActivity extends AppCompatActivity implements View.OnClickListener{
-    Button startBtn, stopBtn;
+    Button startBtn, stopBtn, threadStartBtn, threadStopBtn, asyncStartBtn, asyncStopBtn;
     TextView counterTxt;
     Intent intentService = null;
+    CounterThread currentThread = null;
+
+    CounterAsyncTask asyncTask = null;
 
     BroadcastReceiver mReceiver = new BroadcastReceiver() {
         @Override
@@ -42,8 +45,18 @@ public class CounterActivity extends AppCompatActivity implements View.OnClickLi
         stopBtn = findViewById(R.id.ac_stop_btn);
         counterTxt = findViewById(R.id.ac_counter_text);
 
+        threadStartBtn = findViewById(R.id.ac_thread_start_btn);
+        threadStopBtn = findViewById(R.id.ac_thread_stop_btn);
+
+        asyncStartBtn = findViewById(R.id.ac_async_start_btn);
+        asyncStopBtn = findViewById(R.id.ac_async_stop_btn);
+
         startBtn.setOnClickListener(this);
         stopBtn.setOnClickListener(this);
+        threadStartBtn.setOnClickListener(this);
+        threadStopBtn.setOnClickListener(this);
+        asyncStartBtn.setOnClickListener(this);
+        asyncStopBtn.setOnClickListener(this);
 
         IntentFilter filter = new IntentFilter();
         filter.addAction(CounterService.ACTION_COUNTER);
@@ -67,6 +80,41 @@ public class CounterActivity extends AppCompatActivity implements View.OnClickLi
             if(intentService != null) {
                 stopService(intentService);
                 intentService = null;
+            }
+        } else if(threadStartBtn.equals(view)) {
+            threadStopBtn.setVisibility(View.VISIBLE);
+            threadStartBtn.setVisibility(View.GONE);
+
+            if(currentThread == null) {
+                currentThread = new CounterThread(this);
+                currentThread.setTextView(counterTxt);
+                currentThread.start();
+            }
+        } else if(threadStopBtn.equals(view)) {
+            threadStartBtn.setVisibility(View.VISIBLE);
+            threadStopBtn.setVisibility(View.GONE);
+
+            if(currentThread != null) {
+                if(currentThread.isAlive()) {
+                    currentThread.setRunning(false);
+                }
+                currentThread = null;
+            }
+        } else if(asyncStartBtn.equals(view)) {
+            asyncStopBtn.setVisibility(View.VISIBLE);
+            asyncStartBtn.setVisibility(View.GONE);
+
+            if(asyncTask == null) {
+                asyncTask = new CounterAsyncTask(this, counterTxt);
+                asyncTask.execute();
+            }
+        } else if(asyncStopBtn.equals(view)) {
+            asyncStartBtn.setVisibility(View.VISIBLE);
+            asyncStopBtn.setVisibility(View.GONE);
+
+            if(asyncTask != null) {
+                asyncTask.setRunning(false);
+                asyncTask = null;
             }
         }
     }

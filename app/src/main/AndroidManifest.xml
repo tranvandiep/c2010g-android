@@ -24,11 +24,6 @@
         <activity
             android:name=".lesson07.CounterActivity"
             android:exported="true">
-            <intent-filter>
-                <action android:name="android.intent.action.MAIN" />
-
-                <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>
         </activity>
         <activity
             android:name=".lesson05.NewTourActivity"
@@ -41,7 +36,14 @@
             android:exported="false" />
         <activity
             android:name=".lesson03.FoodActivity"
-            android:exported="true" />
+            android:exported="true">
+
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
         <activity
             android:name=".lesson03.EditSongActivity"
             android:exported="false" />
