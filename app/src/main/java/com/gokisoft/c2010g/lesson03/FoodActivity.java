@@ -19,9 +19,18 @@ import android.widget.EditText;
 import android.widget.ListView;
 
 import com.gokisoft.c2010g.R;
+import com.gokisoft.c2010g.lesson05.Tour;
+import com.google.gson.Gson;
+import com.google.gson.reflect.TypeToken;
 
+import java.io.IOException;
+import java.lang.reflect.Type;
 import java.util.ArrayList;
 import java.util.List;
+
+import okhttp3.OkHttpClient;
+import okhttp3.Request;
+import okhttp3.Response;
 
 public class FoodActivity extends AppCompatActivity {
     public static  final String ACTION_ADD_NEW = "ACTION_ADD_NEW";
@@ -59,8 +68,8 @@ public class FoodActivity extends AppCompatActivity {
         mListView = findViewById(R.id.af_listview);
 
         dataList = new ArrayList<>();
-        dataList.add(new Food("A", 1000, "https://abhiandroid.com/programming/wp-content/uploads/2017/10/AsyncTask-Example-Android-Flow.png"));
-        dataList.add(new Food("A", 2000, "https://i.ytimg.com/vi/uKx0FuVriqA/maxresdefault.jpg"));
+//        dataList.add(new Food("A", 1000, "https://abhiandroid.com/programming/wp-content/uploads/2017/10/AsyncTask-Example-Android-Flow.png"));
+//        dataList.add(new Food("A", 2000, "https://i.ytimg.com/vi/uKx0FuVriqA/maxresdefault.jpg"));
 
         adapter = new FoodAdapter(this, dataList);
 
@@ -72,6 +81,39 @@ public class FoodActivity extends AppCompatActivity {
         filter.addAction(ACTION_ADD_NEW);
 
         registerReceiver(mReceiver, filter);
+
+        callFoodsApi();
+    }
+
+    void callFoodsApi() {
+        new Thread(new Runnable() {
+            @Override
+            public void run() {
+                OkHttpClient client = new OkHttpClient();
+                String url = "https://gokisoft.com/api/fake/49/food/list";
+
+                Request request = new Request.Builder()
+                        .url(url)
+                        .build();
+
+                try (Response response = client.newCall(request).execute()) {
+                    String json = response.body().string();
+
+                    Gson gson = new Gson();
+                    Type listType = new TypeToken<List<Food>>() {}.getType();
+
+                    List<Food> list = gson.fromJson(json, listType);
+
+                    for (Food item : list) {
+                        dataList.add(item);
+                    }
+
+                    adapter.notifyDataSetChanged();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        }).start();
     }
 
     @Override

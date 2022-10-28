@@ -1,0 +1,79 @@
+- Activity
+	- lifecycle
+	- View
+		- View controller
+		- Group view
+			- LinearLayout
+			- RelativeLayout
+			- FrameLayout
+			- ...
+		- Listview/RecycleView/GribView
+		- Fragment
+		...
+- Broadcast/Receiver
+- Intent
+- Content Provider
+	- SharedPreferences
+	- FILE (internal/external)
+	- sqlite
+- API: submit form/restfull -> okhttp (retrofit)
+- gson
+- picasso
+- Thread/AsyncTask
+=> APP: app doc bao, app doc truyen, app quan ly sinh vien => Xin viec.
+(2-3 apps) -> 25$
+
+- Service
+- AIDL/post message
+- process/thread
+- Intent Service
+- Push Notification
+- Firebase
+...
+
+=========== Noi dung hoc
+Định nghĩa API
+1) Quản lý food
+	- Lấy danh sách Food:
+		- URL: /api/food/list
+		- Method: GET
+		- Response:
+			[
+				{
+					"title": "Thuc an a",
+					"price": 100000,
+					"thumbnail": "https://i.ytimg.com/vi/uKx0FuVriqA/maxresdefault.jpg"
+				}, {
+					"title": "Thuc an b",
+					"price": 220000,
+					"thumbnail": "https://i.ytimg.com/vi/uKx0FuVriqA/maxresdefault.jpg"
+				}, {
+					"title": "Thuc an c",
+					"price": 200000,
+					"thumbnail": "https://i.ytimg.com/vi/uKx0FuVriqA/maxresdefault.jpg"
+				}, {
+					"title": "Thuc an d",
+					"price": 150000,
+					"thumbnail": "https://i.ytimg.com/vi/uKx0FuVriqA/maxresdefault.jpg"
+				}, {
+					"title": "Thuc an e",
+					"price": 300000,
+					"thumbnail": "https://i.ytimg.com/vi/uKx0FuVriqA/maxresdefault.jpg"
+				}
+			]
+	- Them Food
+	- Sua Food
+	- Xoa Food
+
+Goi API tu client (Mobile, FE)
+- Khai niem:
+	- header (auth)
+	- param (query)
+	- submit form (http (get/post))
+	- body (restfull)
+
+- GET -> ko tham so
+	- No pram & no header -> easy
+	- header (access_token, auth, secret key, ...) -> Gap kho khan
+- POST
+- Restfull
